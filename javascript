@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Math Quiz!</title>
+<link href ="quizCSS.css" rel ="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<script src = "MathQuiz.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+<script>
+function myAnswer1(){
+let question1= document.querySelector("#textbox").value; 
+if(question1 == 4){
+alert("You are correct!");
+}
+else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+<script>
+function myAnswer2(){
+let question2 = document.querySelector('input[name="question2"]:checked').value;
+if(question2 == 9){
+alert("You are correct!");
+}
+else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+<script>
+function myAnswer3(){
+let question3 = document.querySelector('input[name="question3"]:checked').value;
+if(question3 == 5){
+alert("You are correct!");
+}
+else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+<script>
+function myAnswer4(){
+let question4 = document.querySelector('input[name="question4"]:checked').value;
+if(question4 == 9){
+alert("You are correct!");
+}
+else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+<script>
+function myAnswer5(){
+let question5 = document.querySelector('input[name="question5"]:checked').value;
+if(question5 == 36){
+alert("You are correct!");
+}
+else{
+alert("Wrong answer!");
+}
+}
+</script>
+
+<script>
+     function checkanswer(expected, actual) {
+        if (expected === actual) {
+          console.log("correct answwer");
+}
+}
+</script>
+</head>
+
+
+<body onload="startQuiz()">
+
+  <div id="option" class="row"  style="display: none">
+         
+          <button id="start" class="next" onclick="main()">Start Quiz</button>
+          <button id="next" class="next" onclick="main()" style="display: none">Next</button>
+          <button id="retake" class="next" onclick="setDefault()" style="display: none">Retake Quiz</button>
+          <div id="mybutton">
+        </div>
+        </div>
+
+
+
+<h1>Take the Quiz!</h1>
+
+<form id = "quiz" name = "quiz" action="/action_page.php">
+
+<div id="q1">
+<p class = "questions">1) What is 2 + 2?</p>
+<input id = "textbox" type = "text" name = "question1">
+<input type="button" onclick="myAnswer1()" value="Submit Answer">
+</div>
+
+
+
+
+
+<input type="button" onclick="myFunction1()" value="Start Question 1">
+<script>
+function myFunction1() {
+  document.getElementById("q1").style.display = "block";
+}
+</script>
+
+
+<div id="q2">
+<p class = "questions">2) What is 3 to the power of 2?</p>
+<input type = "radio" id = "mc" name = "question2" value = "9">9<br>
+<input type = "radio" id = "mc" name = "question2" value = "6">6<br>
+<input type = "radio" id = "mc" name = "question2" value = "3">3<br>
+<input type="button" onclick="myAnswer2()" value="Submit Answer">
+</div>
+
+<input type="button" onclick="myFunction2()" value="Start Question 2">
+<script>
+function myFunction2() {
+  document.getElementById("q2").style.display = "block";
+  document.getElementById("q1").style.display = "none";
+}
+</script>
+
+<div id="q3">
+<p class = "questions">3) What is the square root of 25?</p>
+
+<input type = "radio" id = "mc" name = "question3" value = "5"> 5<br>
+<input type = "radio" id = "mc" name = "question3" value = "525"> 525<br>
+<input type="button" onclick="myAnswer3()" value="Submit Answer">
+</div>
+
+
+<input type="button" onclick="myFunction3()" value="Start Question 3">
+<script>
+function myFunction3() {
+  document.getElementById("q3").style.display = "block";
+  document.getElementById("q2").style.display = "none";
+}
+</script>
+
+<div id="q4">
+<p class = "questions">4) What is the square root of 81?</p>
+
+<input type = "radio" id = "mc" name = "question4" value = "9"> 9<br>
+<input type = "radio" id = "mc" name = "question4" value = "7"> 7<br>
+<input type="button" onclick="myAnswer4()" value="Submit Answer">
+</div>
+
+
+<input type="button" onclick="myFunction4()" value="Start Question 4">
+<script>
+function myFunction4() {
+  document.getElementById("q4").style.display = "block";
+  document.getElementById("q3").style.display = "none";
+}
+</script>
+
+<div id="q5">
+<p class = "questions">5) The Joker has a dirty bomb somewhere in Gotham city. It is 9:00PM. Batman has 1 hour before it detonates and leaves the city polluted with Joker toxin for months to come. Batman beat the location of the bomb out of Harley Quinn. It is 10 miles away. The bomb would take 30 minutes to diffuse. If Batman drives the Batmobile at 100mph, how long would it take to reach and diffuse the Joker toxin bomb?</p>
+
+<input type = "radio" id = "mc" name = "question5" value = "36">36 minutes<br>
+<input type = "radio" id = "mc" name = "question5" value = "6">6 minutes<br>
+<input type = "radio" id = "mc" name = "question5" value = "26">26 minutes<br>
+<input type="button" onclick="myAnswer5()" value="Submit Answer">
+</div>
+
+
+<input type="button" onclick="myFunction5()" value="Start Question 5">
+<script>
+function myFunction5() {
+  document.getElementById("q5").style.display = "block";
+  document.getElementById("q4").style.display = "none";
+}
+</script>
+
+
+<input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
+<p>Click Reset to Restart the Quiz!</p>
+<input type="reset">
+</form>
+
+<div id = "after_submit">
+<p id = "number_correct"></p>
+<p id = "message"></p>
+<img id = "picture">
+</div>
+
+<script src = "MathQuiz.js" defer></script>
+</body>
+
+
+  
+  
+  
+  
+
+</html>
+
+
+
+
+
